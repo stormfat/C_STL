@@ -43,7 +43,7 @@ void test_vector(long &value) {
       abort();
     }
   }
-  cout << "建立vector的時間:" << (clock() - timeStart) << endl;
+  cout << "建立vector的時間:" << (clock() - timeStart) <<"毫秒"<< endl;
   cout << "vector的大小:" << c.size() << endl;
   cout << "vector的第一個元素:" << c.front() << endl;
   cout << "vector的最後一個元素:" << c.back() << endl;
@@ -60,7 +60,7 @@ void test_vector(long &value) {
   cout << "vector排序中.....\n";
   timeStart = clock();
   sort(c.begin(), c.end());
-  cout << "排序時間:" << (clock() - timeStart) << endl;
+  cout << "排序時間:" << (clock() - timeStart) << "毫秒" << endl;
   cout << "bsearch()檢索中.....\n";
   string *pItem1 = (string *)bsearch(&target, (c.data()), c.size(),
                                      sizeof(string), compareStrings);
