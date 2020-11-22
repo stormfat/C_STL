@@ -1,9 +1,75 @@
+#include <algorithm> //sort()
+#include <cstdio>    //abort()
+#include <cstdio>    //snprintf()
+#include <ctime>     //clock()
 #include <deque>
 #include <iostream>
 #include <list>
 #include <vector>
 
 using namespace std;
+
+int compareStrings(const void *a, const void *b) {
+  if (*(string *)a > *(string *)b)
+    return 1;
+  else if (*(string *)a < *(string *)b)
+    return -1;
+  else
+    return 0;
+}
+
+string get_a_target_string() {
+  long target = 0;
+  char buf[10];
+  cout << "輸入要檢索的值(0," << RAND_MAX << "):";
+  cin >> target;
+  snprintf(buf, 10, "%d", target);
+  return string(buf);
+}
+
+void test_vector(long &value) {
+  cout << "\nTest_vector()........\n";
+  vector<string> c;
+  char buf[10];
+  clock_t timeStart = clock();
+  for (long i = 0; i < value; ++i) {
+    try {
+      snprintf(
+          buf, 10, "%d",
+          rand()); //將rand()獲取的隨機數(0-32767),轉換成%d格式,在不大于10個字符的情況下放入buf字符數組中.
+      c.push_back(string(buf));
+    } catch (exception &p) {
+      cout << "i=" << i << " " << p.what() << endl;
+      abort();
+    }
+  }
+  cout << "建立vector的時間:" << (clock() - timeStart) << endl;
+  cout << "vector的大小:" << c.size() << endl;
+  cout << "vector的第一個元素:" << c.front() << endl;
+  cout << "vector的最後一個元素:" << c.back() << endl;
+  cout << "vector的内存起始地址:" << c.data() << endl;
+  cout << "vector的實際大小:" << c.capacity() << endl;
+  string target = get_a_target_string();
+  timeStart = clock();
+  auto pItem = ::find(c.begin(), c.end(), target);
+  cout << "檢索了" << (clock() - timeStart) << "毫秒,";
+  if (pItem != c.end())
+    cout << "找到了" << *pItem << endl;
+  else
+    cout << "沒找到!" << endl;
+  cout << "vector排序中.....\n";
+  timeStart = clock();
+  sort(c.begin(), c.end());
+  cout << "排序時間:" << (clock() - timeStart) << endl;
+  cout << "bsearch()檢索中.....\n";
+  string *pItem1 = (string *)bsearch(&target, (c.data()), c.size(),
+                                     sizeof(string), compareStrings);
+  if (pItem1 != NULL)
+    cout << "找到" << *pItem1 << ",用時" << (clock() - timeStart) << "毫秒"
+         << endl;
+  else
+    cout << "沒有找到,用時" << (clock() - timeStart) << endl;
+}
 
 int main() {
   vector<int> a;
@@ -38,7 +104,7 @@ int main() {
   cout << "使用迭代器輸出vector a:\t";
   for (a2 = a.begin(); a2 != a.end(); a2++)
     cout << *a2 << " ";
- 
+
   list<int>::size_type b1;
   list<int>::iterator b2;
   list<int>::const_iterator b3;
@@ -58,7 +124,9 @@ int main() {
   // deque<int>::value_type c7;
   // deque<int>::reference c8;
   // deque<int>::const_reference c9;
-
-
+  long v;
+  cout << "\n輸入一個數用來建立vector:";
+  cin >> v;
+  test_vector(v);
   return 0;
 }
