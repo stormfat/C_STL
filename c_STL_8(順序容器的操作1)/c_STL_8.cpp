@@ -6,6 +6,7 @@
 #include <iostream>
 #include <list>
 #include <vector>
+#include <stack>
 
 using namespace std;
 const long VALUE = 1000000;
@@ -144,6 +145,30 @@ void test_list(const long &value) {
   cout << "排序時間:" << (clock() - timeStart) << "毫秒" << endl;
 }
 
+void test_stack(const long &value) {
+  cout << "\nTest_stack()........\n";
+  stack<string> c;
+  char buf[10];
+  clock_t timeStart = clock();
+  for (long i = 0; i < value; ++i) {
+    try {
+      snprintf(
+          buf, 10, "%d",
+          rand()); //將rand()獲取的隨機數(0-32767),轉換成%d格式,在不大于10個字符的情況下放入buf字符數組中.
+      c.push(string(buf));
+    } catch (exception &p) {
+      cout << "i=" << i << " " << p.what() << endl;
+      abort();
+    }
+  }
+  cout << "建立stack的時間:" << (clock() - timeStart) << "毫秒" << endl;
+  cout << "stack的大小:" << c.size() << endl;
+  cout << "stack的棧頂元素:" << c.top() << endl;
+  c.pop();
+  cout << "棧頂元素出棧后stack的大小:" << c.size() << endl;
+  cout << "目前的棧頂元素:" << c.top() << endl;
+}
+
 int main() {
   vector<int> a;
   list<int> b;
@@ -200,7 +225,7 @@ int main() {
   int n = 1;
 
   while (n != 0) {
-    cout << "\n輸入1測試vector,輸入2測試list,輸入3測試deque,輸入0退出!";
+    cout << "\n輸入1測試vector,輸入2測試list,輸入3測試deque,輸入4測試stack,輸入0退出!";
     cin >> n;
     switch (n) {
     case 1:
@@ -211,6 +236,9 @@ int main() {
       continue;
     case 3:
       test_deque(VALUE);
+      continue;
+    case 4:
+      test_stack(VALUE);
       continue;
     case 0:
       break;

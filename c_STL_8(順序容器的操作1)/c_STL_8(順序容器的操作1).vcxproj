@@ -24,6 +24,7 @@
     <ProjectGuid>{a4542a4e-0d8b-48c7-8691-4a8a7d711746}</ProjectGuid>
     <RootNamespace>cSTL8順序容器的操作1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>c_STL_8(順序容器的操作)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
