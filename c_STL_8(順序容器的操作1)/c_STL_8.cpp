@@ -8,6 +8,7 @@
 #include <vector>
 
 using namespace std;
+const long VALUE = 1000000;
 
 int compareStrings(const void *a, const void *b) {
   if (*(string *)a > *(string *)b)
@@ -27,7 +28,7 @@ string get_a_target_string() {
   return string(buf);
 }
 
-void test_vector(long &value) {
+void test_vector(const long &value) {
   cout << "\nTest_vector()........\n";
   vector<string> c;
   char buf[10];
@@ -43,7 +44,7 @@ void test_vector(long &value) {
       abort();
     }
   }
-  cout << "建立vector的時間:" << (clock() - timeStart) <<"毫秒"<< endl;
+  cout << "建立vector的時間:" << (clock() - timeStart) << "毫秒" << endl;
   cout << "vector的大小:" << c.size() << endl;
   cout << "vector的第一個元素:" << c.front() << endl;
   cout << "vector的最後一個元素:" << c.back() << endl;
@@ -69,6 +70,78 @@ void test_vector(long &value) {
          << endl;
   else
     cout << "沒有找到,用時" << (clock() - timeStart) << endl;
+}
+
+void test_deque(const long &value) {
+  cout << "\nTest_deque()........\n";
+  deque<string> c;
+  char buf[10];
+  clock_t timeStart = clock();
+  for (long i = 0; i < value; ++i) {
+    try {
+      snprintf(
+          buf, 10, "%d",
+          rand()); //將rand()獲取的隨機數(0-32767),轉換成%d格式,在不大于10個字符的情況下放入buf字符數組中.
+      c.push_back(string(buf));
+    } catch (exception &p) {
+      cout << "i=" << i << " " << p.what() << endl;
+      abort();
+    }
+  }
+  cout << "建立deque的時間:" << (clock() - timeStart) << "毫秒" << endl;
+  cout << "deque的大小:" << c.size() << endl;
+  cout << "deque的第一個元素:" << c.front() << endl;
+  cout << "deque的最後一個元素:" << c.back() << endl;
+  cout << "deque的最大容量:" << c.max_size() << endl;
+
+  string target = get_a_target_string();
+  timeStart = clock();
+  auto pItem = ::find(c.begin(), c.end(), target);
+  cout << "檢索了" << (clock() - timeStart) << "毫秒,";
+  if (pItem != c.end())
+    cout << "找到了" << *pItem << endl;
+  else
+    cout << "沒找到!" << endl;
+  cout << "deque排序中.....\n";
+  timeStart = clock();
+  ::sort(c.begin(), c.end());
+  cout << "排序時間:" << (clock() - timeStart) << "毫秒" << endl;
+}
+
+void test_list(const long &value) {
+  cout << "\nTest_list()........\n";
+  list<string> c;
+  char buf[10];
+  clock_t timeStart = clock();
+  for (long i = 0; i < value; ++i) {
+    try {
+      snprintf(
+          buf, 10, "%d",
+          rand()); //將rand()獲取的隨機數(0-32767),轉換成%d格式,在不大于10個字符的情況下放入buf字符數組中.
+      c.push_back(string(buf));
+    } catch (exception &p) {
+      cout << "i=" << i << " " << p.what() << endl;
+      abort();
+    }
+  }
+  cout << "建立list的時間:" << (clock() - timeStart) << "毫秒" << endl;
+  cout << "list的大小:" << c.size() << endl;
+  cout << "list的第一個元素:" << c.front() << endl;
+  cout << "list的最後一個元素:" << c.back() << endl;
+  cout << "list的最大容量:" << c.max_size() << endl;
+
+  string target = get_a_target_string();
+  timeStart = clock();
+  auto pItem = ::find(c.begin(), c.end(), target);
+  cout << "檢索了" << (clock() - timeStart) << "毫秒,";
+  if (pItem != c.end())
+    cout << "找到了" << *pItem << endl;
+  else
+    cout << "沒找到!" << endl;
+  cout << "list排序中.....\n";
+  timeStart = clock();
+  c.sort();
+  cout << "排序時間:" << (clock() - timeStart) << "毫秒" << endl;
 }
 
 int main() {
@@ -124,9 +197,25 @@ int main() {
   // deque<int>::value_type c7;
   // deque<int>::reference c8;
   // deque<int>::const_reference c9;
-  long v;
-  cout << "\n輸入一個數用來建立vector:";
-  cin >> v;
-  test_vector(v);
-  return 0;
+  int n = 1;
+
+  while (n != 0) {
+    cout << "\n輸入1測試vector,輸入2測試list,輸入3測試deque,輸入0退出!";
+    cin >> n;
+    switch (n) {
+    case 1:
+      test_vector(VALUE);
+      continue;
+    case 2:
+      test_list(VALUE);
+      continue;
+    case 3:
+      test_deque(VALUE);
+      continue;
+    case 0:
+      break;
+    default:
+      break;
+    }
+  }
 }
