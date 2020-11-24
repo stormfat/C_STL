@@ -5,8 +5,8 @@
 #include <deque>
 #include <iostream>
 #include <list>
-#include <vector>
 #include <stack>
+#include <vector>
 
 using namespace std;
 const long VALUE = 1000000;
@@ -225,7 +225,8 @@ int main() {
   int n = 1;
 
   while (n != 0) {
-    cout << "\n輸入1測試vector,輸入2測試list,輸入3測試deque,輸入4測試stack,輸入0退出!";
+    cout << "\n輸入1測試vector,輸入2測試list,輸入3測試deque,輸入4測試stack,"
+            "輸入0退出!";
     cin >> n;
     switch (n) {
     case 1:

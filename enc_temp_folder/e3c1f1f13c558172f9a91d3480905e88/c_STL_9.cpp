@@ -157,6 +157,7 @@ void test_map(const long &value) {
     try {
       snprintf(buf, 10, "%d", rand());
       c[i] = string(buf); // map可以用下标将key和value关联,而multimap不行
+                          //,因为map的value不可重复
     } catch (exception &p) {
       cout << "i=" << i << " " << p.what() << endl;
       abort();
