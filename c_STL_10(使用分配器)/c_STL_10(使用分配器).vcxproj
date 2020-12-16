@@ -21,10 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c0aee2f3-a5f0-437c-ae4d-0d3df07b2f4c}</ProjectGuid>
-    <RootNamespace>cSTL9關聯式容器</RootNamespace>
+    <ProjectGuid>{348ba1e2-eb19-40de-a73f-6a1ed46a6e48}</ProjectGuid>
+    <RootNamespace>cSTL10使用分配器</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>c_STL_9(关联式容器)</ProjectName>
+    <ProjectName>c_STL_10(vector)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="c_STL_9.cpp" />
+    <ClCompile Include="c_STL_10.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

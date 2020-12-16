@@ -8,7 +8,7 @@ const long VALUE = 1000000;
 string get_a_target_string() {
   long target = 0;
   char buf[10];
-  cout << "è¼¸å…¥è¦æª¢ç´¢çš„å€¼(0," << RAND_MAX << "):";
+  cout << "İ”ÈëÒª™zË÷µÄÖµ(0," << RAND_MAX << "):";
   cin >> target;
   snprintf(buf, 10, "%d", target);
   return string(buf);
@@ -16,7 +16,7 @@ string get_a_target_string() {
 
 long get_a_target_long() {
   long target = 0;
-  cout << "è¼¸å…¥è¦æª¢ç´¢çš„ç´¢å¼•å€¼:";
+  cout << "İ”ÈëÒª™zË÷µÄË÷ÒıÖµ:";
   cin >> target;
   return target;
 }
@@ -36,7 +36,7 @@ void test_multiset(const long &value) {
     }
   }
 
-  cout << "multisetæ§‹å»ºæ™‚é–“:" << (clock() - timeStart) << endl;
+  cout << "multiset˜‹½¨•rég:" << (clock() - timeStart) << endl;
   cout << "multiset.size()" << c.size() << endl;
   cout << "multiset.max_size()" << c.max_size() << endl;
 
@@ -44,22 +44,22 @@ void test_multiset(const long &value) {
   {
     timeStart = clock();
     auto pItem =
-        ::find(c.begin(), c.end(), target); //æ¯”multisetè‡ªå¸¶çš„findå‡½æ•¸æ…¢å¾ˆå¤š
-    cout << "::find()å‡½æ•¸æª¢ç´¢æ™‚é–“:" << (clock() - timeStart) << endl;
+        ::find(c.begin(), c.end(), target); //±Èmultiset×Ô§µÄfindº¯”µÂıºÜ¶à
+    cout << "::find()º¯”µ™zË÷•rég:" << (clock() - timeStart) << endl;
     if (pItem != c.end())
-      cout << "æ‰¾åˆ°" << *pItem << endl;
+      cout << "ÕÒµ½" << *pItem << endl;
     else
-      cout << "æ²’æ‰¾åˆ°" << endl;
+      cout << "›]ÕÒµ½" << endl;
   }
 
   {
     timeStart = clock();
     auto pItem = c.find(target);
-    cout << "multiset.find()å‡½æ•¸æª¢ç´¢æ™‚é–“:" << (clock() - timeStart) << endl;
+    cout << "multiset.find()º¯”µ™zË÷•rég:" << (clock() - timeStart) << endl;
     if (pItem != c.end())
-      cout << "æ‰¾åˆ°" << *pItem << endl;
+      cout << "ÕÒµ½" << *pItem << endl;
     else
-      cout << "æ²’æ‰¾åˆ°" << endl;
+      cout << "›]ÕÒµ½" << endl;
   }
 }
 
@@ -72,14 +72,14 @@ void test_multimap(const long &value) {
     try {
       snprintf(buf, 10, "%d", rand());
       c.insert(pair<long, string>(
-          i, buf)); // multimapæ¯ä¸€å€‹å…ƒç´ åŒ…æ‹¬ä¸€å€‹ç´¢å¼•(key)åŠvalue(buf)
+          i, buf)); // multimapÃ¿Ò»‚€ÔªËØ°üÀ¨Ò»‚€Ë÷Òı(key)¼°value(buf)
     } catch (exception &p) {
       cout << "i=" << i << " " << p.what() << endl;
       abort();
     }
   }
 
-  cout << "multimapæ§‹å»ºæ™‚é–“:" << (clock() - timeStart) << endl;
+  cout << "multimap˜‹½¨•rég:" << (clock() - timeStart) << endl;
   cout << "multimap.size()" << c.size() << endl;
   cout << "multimap.max_size()" << c.max_size() << endl;
 
@@ -87,13 +87,13 @@ void test_multimap(const long &value) {
   {
     timeStart = clock();
 
-    auto pItem = c.find(target); //é€šékeyé€²è¡Œæª¢ç´¢
-    cout << "multimap.find()å‡½æ•¸æª¢ç´¢æ™‚é–“:" << (clock() - timeStart) << endl;
+    auto pItem = c.find(target); //Í¨ß^keyßMĞĞ™zË÷
+    cout << "multimap.find()º¯”µ™zË÷•rég:" << (clock() - timeStart) << endl;
     if (pItem != c.end())
-      cout << "æ‰¾åˆ°" << (*pItem).second
-           << endl; //å¾æ‰¾åˆ°çš„pItemä¸­ç²å–ç¬¬äºŒå€‹åƒæ•¸,ä¹Ÿå°±æ˜¯value.
+      cout << "ÕÒµ½" << (*pItem).second
+           << endl; //ÄÕÒµ½µÄpItemÖĞ«@È¡µÚ¶ş‚€…¢”µ,Ò²¾ÍÊÇvalue.
     else
-      cout << "æ²’æ‰¾åˆ°" << endl;
+      cout << "›]ÕÒµ½" << endl;
   }
 }
 
@@ -111,7 +111,7 @@ void test_unordered_multiset(const long &value) {
       abort();
     }
   }
-  cout << "unordered_multisetæ§‹å»ºæ™‚é–“:" << (clock() - timeStart) << endl;
+  cout << "unordered_multiset˜‹½¨•rég:" << (clock() - timeStart) << endl;
   cout << "unordered_multiset.size()" << c.size() << endl;
   cout << "unordered_multiset.max_size()" << c.max_size() << endl;
   cout << "unordered_multiset.bucket_count()" << c.bucket_count() << endl;
@@ -127,23 +127,23 @@ void test_unordered_multiset(const long &value) {
   {
     timeStart = clock();
     auto pItem =
-        ::find(c.begin(), c.end(), target); //æ¯”multisetè‡ªå¸¶çš„findå‡½æ•¸æ…¢å¾ˆå¤š
-    cout << "::find()å‡½æ•¸æª¢ç´¢æ™‚é–“:" << (clock() - timeStart) << endl;
+        ::find(c.begin(), c.end(), target); //±Èmultiset×Ô§µÄfindº¯”µÂıºÜ¶à
+    cout << "::find()º¯”µ™zË÷•rég:" << (clock() - timeStart) << endl;
     if (pItem != c.end())
-      cout << "æ‰¾åˆ°" << *pItem << endl;
+      cout << "ÕÒµ½" << *pItem << endl;
     else
-      cout << "æ²’æ‰¾åˆ°" << endl;
+      cout << "›]ÕÒµ½" << endl;
   }
 
   {
     timeStart = clock();
     auto pItem = c.find(target);
-    cout << "unordered_multiset.find()å‡½æ•¸æª¢ç´¢æ™‚é–“:" << (clock() - timeStart)
+    cout << "unordered_multiset.find()º¯”µ™zË÷•rég:" << (clock() - timeStart)
          << endl;
     if (pItem != c.end())
-      cout << "æ‰¾åˆ°" << *pItem << endl;
+      cout << "ÕÒµ½" << *pItem << endl;
     else
-      cout << "æ²’æ‰¾åˆ°" << endl;
+      cout << "›]ÕÒµ½" << endl;
   }
 }
 
@@ -156,14 +156,14 @@ void test_map(const long &value) {
   for (long i = 0; i < value; ++i) {
     try {
       snprintf(buf, 10, "%d", rand());
-      c[i] = string(buf); // mapå¯ä»¥ç”¨ä¸‹æ ‡å°†keyå’Œvalueå…³è”,è€Œmultimapä¸è¡Œ
+      c[i] = string(buf); // map¿ÉÒÔÓÃÏÂ±ê½«keyºÍvalue¹ØÁª,¶ømultimap²»ĞĞ
     } catch (exception &p) {
       cout << "i=" << i << " " << p.what() << endl;
       abort();
     }
   }
 
-  cout << "mapæ§‹å»ºæ™‚é–“:" << (clock() - timeStart) << endl;
+  cout << "map˜‹½¨•rég:" << (clock() - timeStart) << endl;
   cout << "map.size()" << c.size() << endl;
   cout << "map.max_size()" << c.max_size() << endl;
 
@@ -171,21 +171,21 @@ void test_map(const long &value) {
   {
     timeStart = clock();
 
-    auto pItem = c.find(target); //é€šékeyé€²è¡Œæª¢ç´¢
-    cout << "map.find()å‡½æ•¸æª¢ç´¢æ™‚é–“:" << (clock() - timeStart) << endl;
+    auto pItem = c.find(target); //Í¨ß^keyßMĞĞ™zË÷
+    cout << "map.find()º¯”µ™zË÷•rég:" << (clock() - timeStart) << endl;
     if (pItem != c.end())
-      cout << "æ‰¾åˆ°" << (*pItem).first << "ç´¢å¼•å¯¹åº”çš„value:" << (*pItem).second
-           << endl; //å¾æ‰¾åˆ°çš„pItemä¸­ç²å–ç¬¬äºŒå€‹åƒæ•¸,ä¹Ÿå°±æ˜¯value.
+      cout << "ÕÒµ½" << (*pItem).first << "Ë÷Òı¶ÔÓ¦µÄvalue:" << (*pItem).second
+           << endl; //ÄÕÒµ½µÄpItemÖĞ«@È¡µÚ¶ş‚€…¢”µ,Ò²¾ÍÊÇvalue.
     else
-      cout << "æ²’æ‰¾åˆ°" << endl;
+      cout << "›]ÕÒµ½" << endl;
   }
 }
 
 int main() {
   int n = 1;
   while (n != 0) {
-    cout << "\nè¼¸å…¥1æ¸¬è©¦multiset,è¼¸å…¥2æ¸¬è©¦multimap,è¼¸å…¥3æ¸¬è©¦unordered_multiset,"
-            "è¼¸å…¥4æ¸¬è©¦map,è¼¸å…¥0é€€å‡º!";
+    cout << "\nİ”Èë1œyÔ‡multiset,İ”Èë2œyÔ‡multimap,İ”Èë3œyÔ‡unordered_multiset,"
+            "İ”Èë4œyÔ‡map,İ”Èë0ÍË³ö!";
     cin >> n;
     switch (n) {
     case 1:

@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_8(順序容器的操�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_9(關聯式容器)", "c_STL_9(關聯式容器)\c_STL_9(關聯式容器).vcxproj", "{C0AEE2F3-A5F0-437C-AE4D-0D3DF07B2F4C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_10(使用分配器)", "c_STL_10(使用分配器)\c_STL_10(使用分配器).vcxproj", "{348BA1E2-EB19-40DE-A73F-6A1ED46A6E48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -101,6 +103,14 @@ Global
 		{C0AEE2F3-A5F0-437C-AE4D-0D3DF07B2F4C}.Release|x64.Build.0 = Release|x64
 		{C0AEE2F3-A5F0-437C-AE4D-0D3DF07B2F4C}.Release|x86.ActiveCfg = Release|Win32
 		{C0AEE2F3-A5F0-437C-AE4D-0D3DF07B2F4C}.Release|x86.Build.0 = Release|Win32
+		{348BA1E2-EB19-40DE-A73F-6A1ED46A6E48}.Debug|x64.ActiveCfg = Debug|x64
+		{348BA1E2-EB19-40DE-A73F-6A1ED46A6E48}.Debug|x64.Build.0 = Debug|x64
+		{348BA1E2-EB19-40DE-A73F-6A1ED46A6E48}.Debug|x86.ActiveCfg = Debug|Win32
+		{348BA1E2-EB19-40DE-A73F-6A1ED46A6E48}.Debug|x86.Build.0 = Debug|Win32
+		{348BA1E2-EB19-40DE-A73F-6A1ED46A6E48}.Release|x64.ActiveCfg = Release|x64
+		{348BA1E2-EB19-40DE-A73F-6A1ED46A6E48}.Release|x64.Build.0 = Release|x64
+		{348BA1E2-EB19-40DE-A73F-6A1ED46A6E48}.Release|x86.ActiveCfg = Release|Win32
+		{348BA1E2-EB19-40DE-A73F-6A1ED46A6E48}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
