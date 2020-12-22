@@ -1,7 +1,7 @@
-/*é †åºå®¹å™¨dequeé¡
-1.dequeæ˜¯ä¸€å€‹å‹•æ…‹æ•¸çµ„
-2.dequeèˆ‡vectoréå¸¸é¡ä¼¼
-3.dequeå¯ä»¥åœ¨æ•¸çµ„é–‹é ­å’Œæœ«å°¾æ’å…¥å’Œåˆªé™¤æ•¸æ“š*/
+/*í˜ĞòÈİÆ÷dequeî
+1.dequeÊÇÒ»‚€„Ó‘B”µ½M
+2.dequeÅcvector·Ç³£îËÆ
+3.deque¿ÉÒÔÔÚ”µ½Mé_î^ºÍÄ©Î²²åÈëºÍ„h³ı”µ“ş*/
 
 #include <algorithm>
 #include <deque>
@@ -9,24 +9,74 @@
 using std::cout;
 using std::deque;
 using std::endl;
+//ÈİÆ÷´òÓ¡
+template <typename T> void printDeque(const deque<T> &de) {
+  for (auto it = de.begin(); it != de.end(); it++) {
+    size_t num = distance(
+        de.begin(),
+        it); // distanceËã·¨·µ»ØÖµé…¢”µ2-…¢”µ1µÄÖµ.±¾ÀıÖĞ,·µ»ØÊÇ®”Ç°µü´úÆ÷ĞòÌ–¾àëxĞòÌ–Ò»µÄ²îÖµ,Ò²¾ÍÊÇ·µ»ØÔªËØÏÂ˜Ë
+    cout << "[" << num << "]=" << *it << "|";
+  }
+  cout << endl;
+  cout << "-----------------------------------------" << endl;
+}
+
+// dequeµÄ²åÈëºÍÉ¾³ı
+void test01() {
+  deque<char> a;     //Â•Ã÷K¶¨ÁxÒ»‚€deque.
+  a.push_back('3');  //ÔÚê Î²¼ÓÈë
+  a.push_front('5'); //ÔÚê Ê×¼ÓÈë
+  a.push_back('a');
+  a.push_front('b');
+  a.push_front('c');
+  cout << "test01()ÖĞÈİÆ÷aÔ­Ê¼ÄÚÈİ: " << endl;
+  printDeque(a);
+  cout << "test01()ÖĞÈİÆ÷a´ÓÎ²²¿É¾³ıÒ»¸öÔªËØºó´òÓ¡½á¹û: " << endl;
+  a.pop_back();
+  printDeque(a);
+  cout << "test01()ÖĞÈİÆ÷a´ÓÍ·²¿É¾³ıÒ»¸öÔªËØºó´òÓ¡½á¹û: " << endl;
+  a.pop_front();
+  printDeque(a);
+
+  deque<char> b;
+  b.push_back('e');
+  b.push_back('f');
+  b.push_back('g');
+  cout << "test01()ÖĞÈİÆ÷bÔ­Ê¼ÄÚÈİ: " << endl;
+  printDeque(b);
+  cout << "test01()ÖĞÄ¿Ç°aÖĞµÄÄÚÈİ: " << endl;
+  printDeque(a);
+  a.insert(a.begin() + 1, b.begin(), b.end());
+  cout << "test01()ÖĞÖ´ĞĞ\" a.insert(a.begin()+1, b.begin(), b.end()); "
+          "\"ºóaÖĞµÄÄÚÈİ: "
+       << endl;
+  printDeque(a);
+}
+
+// dequeÅÅĞò²Ù×÷
+void test02() {
+  deque<int> d;
+  d.push_back(20);
+  d.push_back(10);
+  d.push_back(40);
+  d.push_back(50);
+  d.push_back(100);
+  d.push_back(103);
+  d.push_back(120);
+  d.push_back(70);
+  cout << "test02()ÖĞÈİÆ÷dµÄÔ­Ê¼ÄÚÈİ: " << endl;
+  printDeque(d);
+  sort(d.begin(), d.end());//sort()ÊÊÓÃÓÚÖ§³ÖËæ»úµü´úÆ÷µÄÈİÆ÷,ÈçvectorºÍdeque
+  cout << "test02()ÖĞÈİÆ÷d¾­¹ıÅÅĞòºóÄÚÈİ: " << endl;
+  printDeque(d);
+}
 
 int main() {
-  deque<int> a;     //è²æ˜ä¸¦å®šç¾©ä¸€å€‹deque.
-  a.push_back(3);   //åœ¨éšŠå°¾åŠ å…¥
-  a.push_front(5);  //åœ¨éšŠé¦–åŠ å…¥
-  a.push_back(4);
-  a.push_front(6);
-  for (int i = 0; i < a.size(); ++i) {
-    cout << a[i] << endl;
-  }
-  a.push_front(7);
-  deque<int>::iterator it;
-  int i = 1;
-  for (it = a.begin(); it != a.end(); it++) {
-    size_t num = distance(
-        a.begin(),
-        it);  // distanceç®—æ³•è¿”å›å€¼ç‚ºåƒæ•¸2-åƒæ•¸1çš„å€¼.æœ¬ä¾‹ä¸­,è¿”å›æ˜¯ç•¶å‰è¿­ä»£å™¨åºè™Ÿè·é›¢åºè™Ÿä¸€çš„å·®å€¼,ä¹Ÿå°±æ˜¯è¿”å›å…ƒç´ ä¸‹æ¨™
-    cout << "a[" << num << "]=" << *it << endl;
-  }
+  test01();
+  cout << endl;
+  cout << endl;
+  test02();
+  system("pause");
+
   return 0;
 }
