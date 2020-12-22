@@ -1,29 +1,64 @@
-/*QUEUEéšŠåˆ—:
-ç‰¹é»:å…ˆé€²å…ˆå‡º(å¾éšŠå°¾æ’å…¥,åœ¨éšŠé¦–åˆªé™¤)
-è‡ªé©æ‡‰å®¹å™¨(å®¹å™¨é©é…å™¨)
-ä¸èƒ½ä½¿ç”¨vector*/
+/*QUEUEê ÁĞ:
+ÌØüc:ÏÈßMÏÈ³ö(Äê Î²²åÈë,ÔÚê Ê×„h³ı)
+×Ôßm‘ªÈİÆ÷(ÈİÆ÷ßmÅäÆ÷)
+²»ÄÜÊ¹ÓÃvector*/
 #include <deque>
 #include <iostream>
 #include <list>
 #include <queue>
 
+using std::string;
 using std::cout;
 using std::deque;
 using std::endl;
 using std::queue;
 
-int main() {
-  queue<int, deque<int>> a;  //å¦‚é€™æ¨£å®šç¾©queue<int>a;é»˜èªç¬¬äºŒåƒæ•¸ç‚ºdeque.
+class Person {
+public:
+  Person(string name,int age):m_Name(name),m_Age(age) {}
+  string m_Name;
+  int m_Age;
+};
+
+void test01() {
+  queue<int, deque<int>> a; //Èçß@˜Ó¶¨Áxqueue<int>a;Ä¬ÕJµÚ¶ş…¢”µédeque.
   a.push(10);
   a.push(5);
   a.push(-1);
   a.push(20);
-  cout << "ç›®å‰éšŠåˆ—ä¸­æœ‰" << a.size() << "å€‹å…ƒç´ " << endl;
-  cout << "éšŠé¦–çš„å…ƒç´ æ˜¯" << a.front() /*åªçœ‹ä¸åˆªé™¤*/ << endl;
-  cout << "éšŠå°¾çš„æ•¸æ“šæ˜¯" << a.back() /*åªçœ‹ä¸åˆªé™¤*/ << endl;
-  a.pop();  //åˆªé™¤éšŠé¦–å…ƒç´ 
-  cout << "ç›®å‰éšŠåˆ—ä¸­æœ‰" << a.size() << "å€‹å…ƒç´ " << endl;
-  cout << "éšŠé¦–çš„å…ƒç´ æ˜¯" << a.front() /*åªçœ‹ä¸åˆªé™¤*/ << endl;
-  cout << "éšŠå°¾çš„æ•¸æ“šæ˜¯" << a.back() /*åªçœ‹ä¸åˆªé™¤*/ << endl;
+  cout << "Ä¿Ç°ê ÁĞÖĞÓĞ" << a.size() << "‚€ÔªËØ" << endl;
+  cout << "ê Ê×µÄÔªËØÊÇ" << a.front() /*Ö»¿´²»„h³ı*/ << endl;
+  cout << "ê Î²µÄ”µ“şÊÇ" << a.back() /*Ö»¿´²»„h³ı*/ << endl;
+  a.pop(); //„h³ıê Ê×ÔªËØ
+  cout << "Ä¿Ç°ê ÁĞÖĞÓĞ" << a.size() << "‚€ÔªËØ" << endl;
+  cout << "ê Ê×µÄÔªËØÊÇ" << a.front() /*Ö»¿´²»„h³ı*/ << endl;
+  cout << "ê Î²µÄ”µ“şÊÇ" << a.back() /*Ö»¿´²»„h³ı*/ << endl;
+}
+
+void test02() {
+  queue<Person> pQueue;
+  Person p1("ÌÆÉ®", 30);
+  Person p2("ËïÎò¿Õ", 30000);
+  Person p3("Öí°Ë½ä", 20000);
+  Person p4("É³ºÍÉĞ", 25000);
+  pQueue.push(p1);
+  pQueue.push(p2);
+  pQueue.push(p3);
+  pQueue.push(p4);
+  while (!pQueue.empty()) {
+    cout << "¶ÓÊ×ÈËÎïĞÕÃû:" << pQueue.front().m_Name
+         << ",ÄêÁä:" << pQueue.front().m_Age << endl;
+    cout << "¶ÓÎ²ÈËÎïĞÕÃû:" << pQueue.back().m_Name
+         << ",ÄêÁä:" << pQueue.back().m_Age << endl;
+    pQueue.pop();
+  }
+}
+
+int main() {
+  cout << "test01()ÔËĞĞ½á¹ûÈçÏÂ:" << endl;
+  test01();
+  cout << endl;
+  cout << "test02()ÔËĞĞ½á¹ûÈçÏÂ:" << endl;
+  test02();
   return 0;
 }
