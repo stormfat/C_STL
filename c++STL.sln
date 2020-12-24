@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_11(string)", "c_STL_1
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "case_1(评委打分)", "case_1(评委打分)\case_1(评委打分).vcxproj", "{A815596E-7EDC-4016-8873-9D26CFDBCB15}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_12(set)", "c_STL_12(set)\c_STL_12(set).vcxproj", "{919D728E-7479-4D82-AC45-69D660C6D98F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{A815596E-7EDC-4016-8873-9D26CFDBCB15}.Release|x64.Build.0 = Release|x64
 		{A815596E-7EDC-4016-8873-9D26CFDBCB15}.Release|x86.ActiveCfg = Release|Win32
 		{A815596E-7EDC-4016-8873-9D26CFDBCB15}.Release|x86.Build.0 = Release|Win32
+		{919D728E-7479-4D82-AC45-69D660C6D98F}.Debug|x64.ActiveCfg = Debug|x64
+		{919D728E-7479-4D82-AC45-69D660C6D98F}.Debug|x64.Build.0 = Debug|x64
+		{919D728E-7479-4D82-AC45-69D660C6D98F}.Debug|x86.ActiveCfg = Debug|Win32
+		{919D728E-7479-4D82-AC45-69D660C6D98F}.Debug|x86.Build.0 = Debug|Win32
+		{919D728E-7479-4D82-AC45-69D660C6D98F}.Release|x64.ActiveCfg = Release|x64
+		{919D728E-7479-4D82-AC45-69D660C6D98F}.Release|x64.Build.0 = Release|x64
+		{919D728E-7479-4D82-AC45-69D660C6D98F}.Release|x86.ActiveCfg = Release|Win32
+		{919D728E-7479-4D82-AC45-69D660C6D98F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
