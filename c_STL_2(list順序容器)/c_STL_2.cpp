@@ -1,27 +1,81 @@
-/*å­¸ç¿’å†…å®¹
-1.åœ¨listé–‹é ­æ’å…¥å…ƒç´ 
-2.åœ¨listæœ«å°¾æ’å…¥å…ƒç´ 
-3.åœ¨listä¸­é–“æ’å…¥å…ƒç´ 
-4.åˆªé™¤listä¸­çš„å…ƒç´ 
-5.å°listä¸­å…ƒç´ é€²è¡Œåè½‰å’Œæ’åº*/
+/*ŒWÁ•ÄÚÈİ
+1.ÔÚlisté_î^²åÈëÔªËØ
+2.ÔÚlistÄ©Î²²åÈëÔªËØ
+3.ÔÚlistÖĞég²åÈëÔªËØ
+4.„h³ılistÖĞµÄÔªËØ
+5.Œ¦listÖĞÔªËØßMĞĞ·´ŞDºÍÅÅĞò
+6.ListÈİÆ÷²»Ö§³ÖËæ»ú·ÃÎÊµü´úÆ÷,²»ÄÜÌøÔ¾Ê½·ÃÎÊ*/
 
-#include <algorithm>
+#include <algorithm> //ÎªÁËÊ¹ÓÃdistance()Ëã·¨
 #include <iostream>
 #include <list>
 using std::cout;
 using std::endl;
 using std::list;
+using std::string;
 
-void PrintListContent(const list<int>& listInput) {
+class Person {
+public:
+  Person(string name, int age, int height)
+      : m_Name(name), m_Age(age), m_Height(height) {}
+  string getName() { return this->m_Name; }
+  int getAge() { return m_Age; }
+  int getHeight() { return m_Height; }
+
+private:
+  string m_Name;
+  int m_Age;
+  int m_Height;
+};
+
+// Person¶ÔÏó´òÓ¡·½·¨
+void PrintListPerson(list<Person> &lperson) {
+  for (auto it = lperson.begin(); it != lperson.end(); it++)
+    cout << "ĞÕÃû:" << (*it).getName() << ", ÄêÁä:" << (*it).getAge()
+         << ", Éí¸ß:" << (*it).getHeight() << endl;
+}
+
+//ÅÅĞòÌõ¼ş
+bool comparePerson(Person &p1, Person &p2) { //°´ÄêÁäÉıĞòÅÅÁĞ,Èç¹ûÄêÁäÏàÍ¬°´Éí¸ß½µĞò
+  if (p1.getAge() == p2.getAge())
+    return p1.getHeight() > p2.getHeight();
+  else
+    return p1.getAge() < p2.getAge();
+}
+
+//ÅÅĞò°¸Àı,°Ñ×Ô¶¨ÒåÀàĞÍ½øĞĞÅÅĞò
+void test02() {
+  list<Person> lPerson; // ´´½¨ÈİÆ÷
+
+  Person p1("Áõ±¸", 35, 175);
+  Person p2("²Ü²Ù", 45, 165);
+  Person p3("ËïÈ¨", 40, 170);
+  Person p4("ÕÔÔÆ", 25, 190);
+  Person p5("ÕÅ·É", 35, 175);
+  Person p6("¹ØÓğ", 35, 195);
+
+  lPerson.push_back(p1);
+  lPerson.push_back(p2);
+  lPerson.push_back(p3);
+  lPerson.push_back(p4);
+  lPerson.push_back(p5);
+  lPerson.push_back(p6);
+  cout << "-----------ÅÅĞòÇ°:-----------" << endl;
+  PrintListPerson(lPerson);
   cout << endl;
-  list<int>::const_iterator iter;
-  for (iter = listInput.begin(); iter != listInput.end(); iter++) {
+  cout << "---------- ÅÅĞòºó------------" << endl;
+  lPerson.sort(comparePerson);
+  PrintListPerson(lPerson);
+}
+
+template <typename T> void PrintListContent(list<T> &listInput) {
+  cout << endl;
+  for (auto iter = listInput.begin(); iter != listInput.end(); iter++) {
     size_t num = distance(listInput.begin(), iter);
     cout << "[" << num << "]=" << *iter << endl;
   }
 }
-
-int main() {
+void test01() {
   list<int>::iterator iter;
   list<int> a;
   list<int> b;
@@ -38,11 +92,11 @@ int main() {
   a.push_back(8989);
   iter = a.begin();
   iter++;
-  a.insert(iter, 3, 7);  //åœ¨è¿­ä»£å™¨ä½ç½®å‰æ’å…¥3å€‹7;
+  a.insert(iter, 3, 7); //ÔÚµü´úÆ÷Î»ÖÃÇ°²åÈë3‚€7;
   PrintListContent(a);
   iter++;
   a.erase(a.begin(),
-          iter);  //åˆªé™¤å¾begin()åˆ°ç•¶å‰è¿­ä»£å™¨ä½ç½®(ä¸åŒ…æ‹¬ç•¶å‰ä½ç½®)çš„æ‰€æœ‰å…ƒç´ 
+          iter); //„h³ıÄbegin()µ½®”Ç°µü´úÆ÷Î»ÖÃ(²»°üÀ¨®”Ç°Î»ÖÃ)µÄËùÓĞÔªËØ
   PrintListContent(a);
 
   /* for (iter = a.begin(); iter != a.end(); iter++) {
@@ -59,9 +113,15 @@ int main() {
   cout << endl;
   a.insert(a.begin(), ++b.begin(), --b.end());
   PrintListContent(a);
-  a.sort();     //æ’åºå‡½æ•¸
-  a.reverse();  //åè½‰å‡½æ•¸
-  cout << "å…ˆæ’åºå†åè½‰å";
+  a.sort();    //ÅÅĞòº¯”µ
+  a.reverse(); //·´ŞDº¯”µ
+  cout << "ÏÈÅÅĞòÔÙ·´ŞDºó";
   PrintListContent(a);
+}
+
+int main() {
+  // test01();
+  test02();
+
   return 0;
 }
