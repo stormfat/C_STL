@@ -43,6 +43,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_17(谓词)", "c_STL_1
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_18(内建函数对象)", "c_STL_18(内建函数对象)\c_STL_18(内建函数对象).vcxproj", "{97A2D530-9454-45B3-9B9E-33313D53757F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_19(常用算法)", "c_STL_19\c_STL_19.vcxproj", "{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -211,6 +213,14 @@ Global
 		{97A2D530-9454-45B3-9B9E-33313D53757F}.Release|x64.Build.0 = Release|x64
 		{97A2D530-9454-45B3-9B9E-33313D53757F}.Release|x86.ActiveCfg = Release|Win32
 		{97A2D530-9454-45B3-9B9E-33313D53757F}.Release|x86.Build.0 = Release|Win32
+		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Debug|x64.ActiveCfg = Debug|x64
+		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Debug|x64.Build.0 = Debug|x64
+		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Debug|x86.ActiveCfg = Debug|Win32
+		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Debug|x86.Build.0 = Debug|Win32
+		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Release|x64.ActiveCfg = Release|x64
+		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Release|x64.Build.0 = Release|x64
+		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Release|x86.ActiveCfg = Release|Win32
+		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
