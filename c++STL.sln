@@ -45,6 +45,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_18(内建函数对象
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_19(常用算法)", "c_STL_19\c_STL_19.vcxproj", "{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "case_3(演讲比赛流程管理系统)", "case_3(演讲比赛流程管理系统)\case_3(演讲比赛流程管理系统).vcxproj", "{D7163DEA-B829-4BA6-A42E-83AB40E82976}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -221,6 +223,14 @@ Global
 		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Release|x64.Build.0 = Release|x64
 		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Release|x86.ActiveCfg = Release|Win32
 		{E1FB8A95-057E-4B0C-B19A-E4991A9F1122}.Release|x86.Build.0 = Release|Win32
+		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Debug|x64.ActiveCfg = Debug|x64
+		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Debug|x64.Build.0 = Debug|x64
+		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Debug|x86.ActiveCfg = Debug|Win32
+		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Debug|x86.Build.0 = Debug|Win32
+		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Release|x64.ActiveCfg = Release|x64
+		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Release|x64.Build.0 = Release|x64
+		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Release|x86.ActiveCfg = Release|Win32
+		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
