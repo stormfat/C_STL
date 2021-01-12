@@ -47,6 +47,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_STL_19(常用算法)", "c
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "case_3(演讲比赛流程管理系统)", "case_3(演讲比赛流程管理系统)\case_3(演讲比赛流程管理系统).vcxproj", "{D7163DEA-B829-4BA6-A42E-83AB40E82976}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "case_4(机房预约系统)", "case_4(机房预约系统)\case_4(机房预约系统).vcxproj", "{139CF370-9C2F-4FF3-9AA2-CA136CACFC97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -231,6 +233,14 @@ Global
 		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Release|x64.Build.0 = Release|x64
 		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Release|x86.ActiveCfg = Release|Win32
 		{D7163DEA-B829-4BA6-A42E-83AB40E82976}.Release|x86.Build.0 = Release|Win32
+		{139CF370-9C2F-4FF3-9AA2-CA136CACFC97}.Debug|x64.ActiveCfg = Debug|x64
+		{139CF370-9C2F-4FF3-9AA2-CA136CACFC97}.Debug|x64.Build.0 = Debug|x64
+		{139CF370-9C2F-4FF3-9AA2-CA136CACFC97}.Debug|x86.ActiveCfg = Debug|Win32
+		{139CF370-9C2F-4FF3-9AA2-CA136CACFC97}.Debug|x86.Build.0 = Debug|Win32
+		{139CF370-9C2F-4FF3-9AA2-CA136CACFC97}.Release|x64.ActiveCfg = Release|x64
+		{139CF370-9C2F-4FF3-9AA2-CA136CACFC97}.Release|x64.Build.0 = Release|x64
+		{139CF370-9C2F-4FF3-9AA2-CA136CACFC97}.Release|x86.ActiveCfg = Release|Win32
+		{139CF370-9C2F-4FF3-9AA2-CA136CACFC97}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
